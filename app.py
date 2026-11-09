@@ -14,7 +14,14 @@ langauge = input("What laguage do you want this to print in?")
     print(data[i]["name"][langauge])
 print(len(data)) """
 # Develop a function that creates a new list of pokemon based on the type the user searched for. If no pokemon was found of that type inform the user
-type_input = input()
+type_input = input("What Pokemon type are you looking for?")
+user_input_valid = False
+for i in range(len(data)):
+    if type_input in data[i]["type"]:
+        user_input_valid = True
+        print(data[i]["name"][langauge])
+if user_input_valid == False:
+    print("No Pokemon of that type was found")
 #Develop a function to find all pokemon matching the name the user searched for. Ex. if "Char" return Charmander, Charmeleon and Charizard. Make the user aware if no pokemon was found. 
 
 
